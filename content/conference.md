@@ -1,5 +1,5 @@
 ---
-title: "3rd OxAI Conference"
+title: "3rd OXAI Conference"
 edition: "3rd"
 date: "Sunday, 8th March 2026"
 time: "12:00 PM – 7:00 PM"
