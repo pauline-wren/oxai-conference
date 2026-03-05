@@ -1,4 +1,5 @@
 import ReactMarkdown from 'react-markdown'
+import rehypeRaw from 'rehype-raw'
 import { useState } from 'react'
 import ComingSoon from './ComingSoon'
 
@@ -52,7 +53,7 @@ function PanelBlock({ panel }) {
           </button>
           {open && (
             <div className="text-[#444] text-sm leading-loose space-y-3 mt-4 max-w-3xl [&_h2]:text-[#a78bfa] [&_h2]:text-[10px] [&_h2]:tracking-[0.2em] [&_h2]:uppercase [&_h2]:mt-4 [&_h2]:mb-1 [&_ul]:list-disc [&_ul]:pl-5 [&_ul]:space-y-1">
-              <ReactMarkdown>{content}</ReactMarkdown>
+              <ReactMarkdown rehypePlugins={[rehypeRaw]}>{content}</ReactMarkdown>
             </div>
           )}
         </div>

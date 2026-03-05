@@ -1,4 +1,5 @@
 import ReactMarkdown from 'react-markdown'
+import rehypeRaw from 'rehype-raw'
 
 export default function About({ conf, body }) {
   return (
@@ -10,7 +11,7 @@ export default function About({ conf, body }) {
         </div>
 
         <div className="text-[#333] text-base leading-loose space-y-4 max-w-3xl">
-          <ReactMarkdown>{body}</ReactMarkdown>
+          <ReactMarkdown rehypePlugins={[rehypeRaw]}>{body}</ReactMarkdown>
         </div>
       </div>
     </section>

@@ -2,13 +2,14 @@ import ComingSoon from './ComingSoon'
 
 const colors = {
   keynote:  { dot: 'bg-mint',      badge: 'bg-mint text-ink' },
+  featured: { dot: 'bg-mint',      badge: 'bg-mint text-ink' },
   panel:    { dot: 'bg-[#a78bfa]', badge: 'bg-[#a78bfa] text-white' },
   session:  { dot: 'bg-[#60a5fa]', badge: 'bg-[#60a5fa] text-white' },
   workshop: { dot: 'bg-[#fb923c]', badge: 'bg-[#fb923c] text-white' },
   social:   { dot: 'bg-mint',      badge: 'bg-mint text-ink' },
   logistics:{ dot: 'bg-g700',      badge: null },
 }
-const label = { keynote: 'Featured Talk', panel: 'Panel', session: 'Session', workshop: 'Workshop', social: 'Social' }
+const label = { keynote: 'Keynote', featured: 'Featured Talk', panel: 'Panel', session: 'Session', workshop: 'Workshop', social: 'Social' }
 
 export default function Schedule({ conf }) {
   const items = conf.schedule ?? []
