@@ -12,8 +12,7 @@ photo: "/speakers/josh.jpeg"
 linkedin: ""
 ---
 
-Josh Lawman is the Founder of Adder.
-
+Josh Lawman is the founder of Adder, a studio dedicated to solving business problems through applied AI. An engineer with 8 years of experience building ML & AI products. Having played with LLMs since the GPT-3 era, Josh helps companies build AI products that are secure, measurable, and ready to scale.
 
 ## Talk Abstract
 
