@@ -8,13 +8,13 @@ groups:
         linkedin: "https://www.linkedin.com/in/puyu-wang/"
 
       - name: "Evelyn Schneider"
-        photo: "/public/team/evelyn.jpg"
+        photo: "/team/evelyn.jpg"
         role: "Programme Co-Chair"
         linkedin: "https://www.linkedin.com/in/evelyn-schneider"
 
       - name: "Frederik Nolte"
         role: "Programme Co-Chair"
-        photo: "/public/team/frederik.png"
+        photo: "/team/frederik.png"
         linkedin: "https://www.linkedin.com/in/frederiknolte/"
 
 
