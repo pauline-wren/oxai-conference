@@ -52,4 +52,8 @@ thanks:
   - "Oxford e-Research Centre, Department of Engineering Science, University of Oxford"
   - "Department of Computer Science, University of Oxford"
 
+thanks_people:
+  - "Zoe Case"
+  - "Ayca Deniz Ergin"
+
 ---

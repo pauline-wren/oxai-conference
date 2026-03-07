@@ -29,7 +29,7 @@ function MemberCard({ member: m }) {
   )
 }
 
-export default function Committee({ groups, thanks }) {
+export default function Committee({ groups, thanks, thanksPeople }) {
   return (
     <section id="committee" className="bg-ink py-20 md:py-24 border-b border-g800">
       <div className="max-w-5xl mx-auto px-5 md:px-8">
@@ -72,6 +72,13 @@ export default function Committee({ groups, thanks }) {
                 </span>
               ))}
             </div>
+          </div>
+        )}
+
+        {thanksPeople?.length > 0 && (
+          <div className="mt-8 pt-8" style={{ borderTop: '1px solid rgba(255,255,255,0.07)' }}>
+            <p className="text-g300 text-xs tracking-[0.2em] uppercase mb-4">With special thanks to</p>
+            <p className="text-g400 text-sm">{thanksPeople.join(' · ')}</p>
           </div>
         )}
       </div>
