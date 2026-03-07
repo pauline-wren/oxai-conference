@@ -92,8 +92,8 @@ function PresentationSlide({ panel, onClose }) {
             <div className="flex flex-col gap-6">
               {d.panelists.map((p, i) => (
                 <div key={i} style={{ borderLeft: '3px solid #a78bfa', paddingLeft: '1rem' }}>
-                  <p className="text-white font-bold" style={{ fontSize: '1.6rem' }}>{p.name}</p>
-                  <p style={{ color: 'rgba(255,255,255,0.55)', fontSize: '1rem', marginTop: '0.25rem', lineHeight: 1.5 }}>
+                  <p className="text-white font-bold" style={{ fontSize: 'clamp(1.6rem, 2.5vw, 2.4rem)' }}>{p.name}</p>
+                  <p style={{ color: 'rgba(255,255,255,0.55)', fontSize: 'clamp(0.9rem, 1.2vw, 1.15rem)', marginTop: '0.25rem', lineHeight: 1.5 }}>
                     {p.affiliation}
                   </p>
                 </div>
