@@ -90,8 +90,8 @@ schedule:
     location: "Multiple Venues"
     type: "session"
 
-  - time: "6:00 PM"
-    endTime: "8:00 PM"
+  - time: "7:30 PM"
+    endTime: "8:00  PM"
     event: "Social & Networking"
     type: social
     location: "Atrium"
