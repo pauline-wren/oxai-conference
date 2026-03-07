@@ -2,7 +2,7 @@
 id: "ltb-4"
 session_id: "session-ltb"
 presenter: "Krishiv Kukreja"
-affiliation: ""
+affiliation: "Undergraduate Student, Mathematical Institute, University of Oxford"
 title: "Computer Vision for Automated Car Part Identification"
 ---
 
