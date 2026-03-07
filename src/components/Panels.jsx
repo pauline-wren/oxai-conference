@@ -115,6 +115,16 @@ function PanelBlock({ panel }) {
   const { data: d, content } = panel
   const [open, setOpen] = useState(false)
   const [presenting, setPresenting] = useState(false)
+  const [desktopOnly, setDesktopOnly] = useState(false)
+
+  function handlePresent() {
+    if (!document.fullscreenEnabled || window.innerWidth < 768) {
+      setDesktopOnly(true)
+      setTimeout(() => setDesktopOnly(false), 3000)
+      return
+    }
+    setPresenting(true)
+  }
 
   return (
     <>
@@ -128,14 +138,19 @@ function PanelBlock({ panel }) {
             <div className="flex flex-wrap items-center gap-3">
               <span className="bg-[#a78bfa] text-white text-[10px] font-bold tracking-widest uppercase px-2 py-0.5">Panel</span>
               <span className="text-[#666] text-sm">{d.time}</span>
-              {d.venue && <span className="text-[#666] text-sm hidden sm:inline">· {d.venue}</span>}
+              {d.venue && <span className="text-[#666] text-sm">· {d.venue}</span>}
             </div>
-            <button
-              onClick={() => setPresenting(true)}
-              className="flex items-center gap-1.5 text-[10px] font-bold tracking-widest uppercase px-3 py-1.5 border border-[#a78bfa] text-[#a78bfa] hover:bg-[#a78bfa] hover:text-white transition-colors"
-            >
-              <span>▶</span> Present
-            </button>
+            <div className="flex flex-col items-end gap-1">
+              <button
+                onClick={handlePresent}
+                className="flex items-center gap-1.5 text-[10px] font-bold tracking-widest uppercase px-3 py-1.5 border border-[#a78bfa] text-[#a78bfa] hover:bg-[#a78bfa] hover:text-white transition-colors"
+              >
+                <span>▶</span> Present
+              </button>
+              {desktopOnly && (
+                <p className="text-[10px] text-[#999] tracking-wide">Desktop only — use on a computer</p>
+              )}
+            </div>
           </div>
           <h3 className="text-ink font-bold text-xl leading-snug">{d.title}</h3>
           {d.subtitle && <p className="text-[#555] italic text-sm mt-1">{d.subtitle}</p>}
