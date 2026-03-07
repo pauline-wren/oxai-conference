@@ -42,12 +42,14 @@ panelists:
 
 ---
 
- 
+ Artificial intelligence is advancing at extraordinary speed. Universities are not just observing this transformation; they are actively shaping it. But what responsibility does academia hold in steering the future of AI, and how should it respond to growing industry influence and global competition?
 
+This panel brings together leaders from the Oxford AI Society, the AI Competency Centre, and the Claude Builder Club to explore how academic communities drive innovation, cultivate talent, and define the values embedded in AI systems. From research and education to entrepreneurship and community-building, our speakers will reflect on what universities uniquely contribute and where they must evolve.
 
- 
+We will examine pressing questions at the intersection of academia and industry: where incentives align, where tensions arise, and whether collaboration strengthens or compromises intellectual independence. Alongside strategic insight, panellists will share candid reflections on career paths, leadership, and what it takes to build meaningful AI communities in a rapidly changing landscape.
 
-## Topics
+If AI will shape the future, the question is not whether academia matters, but how it chooses to lead. Join us for a thoughtful and energising conversation about the role universities must play in defining the next chapter of AI.
+
 
  
 
