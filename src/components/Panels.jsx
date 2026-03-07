@@ -85,10 +85,12 @@ function PresentationSlide({ panel, onClose }) {
         {/* Right — panelists */}
         {d.panelists?.length > 0 && (
           <div className="flex flex-col justify-center px-12 py-10" style={{ flex: '1' }}>
-            <p style={{ color: '#1fffb6', fontSize: '0.75rem', letterSpacing: '0.25em' }}
-              className="font-bold uppercase mb-8">
-              Panelists
-            </p>
+            <div className="flex items-center gap-4 mb-10">
+              <span style={{ display: 'block', width: '2.5rem', height: '3px', background: '#1fffb6', flexShrink: 0 }} />
+              <span style={{ color: '#1fffb6', fontSize: '1.1rem', letterSpacing: '0.3em' }} className="font-bold uppercase">
+                Panelists
+              </span>
+            </div>
             <div className="flex flex-col gap-6">
               {d.panelists.map((p, i) => (
                 <div key={i} style={{ borderLeft: '3px solid #a78bfa', paddingLeft: '1rem' }}>

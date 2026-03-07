@@ -23,17 +23,17 @@ panelists:
     affiliation: "OXAI Secretary"
   - name: "Lana Seo"
     affiliation: "OXAI Events & Media Team Member"
-
-  - name: "Zoe Case"
-    affiliation: "Community and Channels Officer, AI Competency Centre"
-
   - name: "Kelly Webb-Davies"
     affiliation: "Consultant, AI Competency Centre"
+  
+
+
 
   - name: "Anders Reagan"
     affiliation: "Consultant, AI Competency Centre"
 
-  
+  - name: "Zoe Case"
+    affiliation: "Community and Channels Officer, AI Competency Centre"
   - name: 'Ayca Deniz Ergin'
     affiliation: "Claude Builder Club @ Oxford, OXAI Entrepreneurship Team Member"
 
