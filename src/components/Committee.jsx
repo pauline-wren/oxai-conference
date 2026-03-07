@@ -29,7 +29,7 @@ function MemberCard({ member: m }) {
   )
 }
 
-export default function Committee({ groups }) {
+export default function Committee({ groups, thanks }) {
   return (
     <section id="committee" className="bg-ink py-20 md:py-24 border-b border-g800">
       <div className="max-w-5xl mx-auto px-5 md:px-8">
@@ -45,14 +45,34 @@ export default function Committee({ groups }) {
                   <h3 className="text-g300 text-xs tracking-[0.2em] uppercase flex-shrink-0">{group.name}</h3>
                   <div className="flex-1 h-px bg-g800" />
                 </div>
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-                  {group.members?.map((m, i) => <MemberCard key={i} member={m} />)}
-                </div>
+                {group.members?.length > 0 ? (
+                  <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+                    {group.members.map((m, i) => <MemberCard key={i} member={m} />)}
+                  </div>
+                ) : group.note ? (
+                  <div className="flex items-center gap-6">
+                    <img src="/oxai_logo_text.png" alt="Oxford AI Society" className="h-10 w-auto opacity-70" />
+                    <p className="text-g400 text-sm italic">{group.note}</p>
+                  </div>
+                ) : null}
               </div>
             ))}
           </div>
         ) : (
           <ComingSoon dark />
+        )}
+
+        {thanks?.length > 0 && (
+          <div className="mt-16 pt-10" style={{ borderTop: '1px solid rgba(255,255,255,0.07)' }}>
+            <p className="text-g300 text-xs tracking-[0.2em] uppercase mb-6">Special Thanks to</p>
+            <div className="flex flex-wrap gap-3">
+              {thanks.map((org, i) => (
+                <span key={i} className="text-g400 text-sm border border-g800 px-4 py-2">
+                  {org}
+                </span>
+              ))}
+            </div>
+          </div>
         )}
       </div>
     </section>

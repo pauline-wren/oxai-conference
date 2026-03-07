@@ -25,7 +25,7 @@ export default function App() {
         <Panels panels={panels} />
         <Sessions sessions={sessions} />
         <Workshops workshops={workshops} />
-        <Committee groups={comm.groups ?? []} />
+        <Committee groups={comm.groups ?? []} thanks={comm.thanks ?? []} />
       </main>
       <Footer conf={conf} />
     </>
