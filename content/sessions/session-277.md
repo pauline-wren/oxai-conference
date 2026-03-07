@@ -1,7 +1,7 @@
 ---
 id: "session-277"
 title: "Ethics, Governance, Human Interaction & Socio-Technical AI"
-time: ""
+time: "6:00 PM - 7:30 PM"
 venue: "Room 277, the Teaching Room, OeRC"
 chair: ""
 ---

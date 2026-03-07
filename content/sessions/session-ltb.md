@@ -1,7 +1,7 @@
 ---
 id: "session-ltb"
 title: "Methods & Systems"
-time: ""
+time: "6:00 PM - 7:30 PM"
 venue: "The Bill Roscoe Lecture Theatre"
 chair: ""
 ---
