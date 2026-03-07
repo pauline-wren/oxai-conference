@@ -16,7 +16,7 @@ organizers:
 
 panelists:
 
-  - name: "Narankar Sehmi"
+  - name: "Narankar Sehmi (Moderator)"
 
     affiliation: "OXAI Safety & Governance Lead"
 

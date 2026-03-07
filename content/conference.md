@@ -33,7 +33,7 @@ schedule:
 
   - time: "01:00 PM"
     endTime: "01:50 PM"
-    event: "Panel Session TBC"
+    event: "Beyond Automation: Artificial Intelligence and the Interpretive Traditions of the Humanities"
     type: panel
     location: "The Bill Roscoe Lecture Theatre"
   
@@ -61,13 +61,13 @@ schedule:
 
   - time: "4:00 PM"
     endTime: "4:30 PM"
-    event: "Tea Break"
+    event: "Break"
     type: logistics
     location: "Atrium"
 
   - time: "4:30 PM"
     endTime: "5:20 PM"
-    event: "Panel Session 1 TBC"
+    event: "AI Society, AI Competency Centre, Claude Builder Club Joint Panel: How Will the Academic Community Shape the Future of AI?"
     type: panel
     location: "The Bill Roscoe Lecture Theatre"
 

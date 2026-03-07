@@ -21,7 +21,7 @@ panelists:
     affiliation: "OXAI Treasurer"
   - name: 'Udai Dhamija'
     affiliation: "OXAI Secretary"
-  - name: "Lana Seo"
+  - name: "Lana Seo (Moderator)"
     affiliation: "OXAI Events & Media Team Member"
   - name: "Kelly Webb-Davies"
     affiliation: "Consultant, AI Competency Centre"
