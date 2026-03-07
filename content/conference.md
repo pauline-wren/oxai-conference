@@ -66,13 +66,13 @@ schedule:
     location: "Atrium"
 
   - time: "4:30 PM"
-    endTime: "5:30 PM"
+    endTime: "5:20 PM"
     event: "Panel Session 1 TBC"
     type: panel
     location: "The Bill Roscoe Lecture Theatre"
 
   - time: "4:30 PM"
-    endTime: "5:30 PM"
+    endTime: "5:20 PM"
     event: "Panel Session 2 TBC"
     type: panel
     location: "Room 277, Teaching Room, OeRC"
