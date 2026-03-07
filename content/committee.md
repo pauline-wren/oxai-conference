@@ -41,6 +41,7 @@ groups:
       - name: "Zaid Kaddour"
       - name: "Narankar Sehmi"
 
+
   - name: "Oxford AI Society"
     note: "Proudly presented by the Oxford AI Society. Many more members of our community contributed to making this conference happen — thank you to everyone who gave their time, ideas, and effort."
     members: []
