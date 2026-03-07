@@ -73,7 +73,7 @@ schedule:
 
   - time: "4:30 PM"
     endTime: "5:20 PM"
-    event: "Panel Session 2 TBC"
+    event: "Live Podcast: The New Era of AI Chatbots"
     type: panel
     location: "Room 277, Teaching Room, OeRC"
 

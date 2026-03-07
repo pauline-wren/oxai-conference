@@ -14,14 +14,19 @@ function PanelBlock({ panel }) {
       <div className="px-7 pt-6 pb-5 border-b border-[#f0f0f0]">
         <div className="flex flex-wrap items-center gap-3 mb-3">
           <span className="bg-[#a78bfa] text-white text-[10px] font-bold tracking-widest uppercase px-2 py-0.5">Panel</span>
-          <span className="text-[#bbb] text-sm">{d.time}</span>
-          {d.venue && <span className="text-[#ccc] text-sm hidden sm:inline">· {d.venue}</span>}
+          <span className="text-[#666] text-sm">{d.time}</span>
+          {d.venue && <span className="text-[#666] text-sm hidden sm:inline">· {d.venue}</span>}
         </div>
         <h3 className="text-ink font-bold text-xl leading-snug">{d.title}</h3>
-        {d.subtitle && <p className="text-[#777] italic text-sm mt-1">{d.subtitle}</p>}
+        {d.subtitle && <p className="text-[#555] italic text-sm mt-1">{d.subtitle}</p>}
         {d.moderator && (
-          <p className="text-[#999] text-sm mt-2">
+          <p className="text-[#666] text-sm mt-2">
             Moderated by <span className="text-ink font-bold">{d.moderator}</span>
+          </p>
+        )}
+        {d.organizers?.length > 0 && (
+          <p className="text-[#666] text-sm mt-1">
+            Organised by <span className="text-ink font-bold">{d.organizers.join(', ')}</span>
           </p>
         )}
       </div>
