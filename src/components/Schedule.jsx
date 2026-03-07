@@ -29,14 +29,13 @@ export default function Schedule({ conf }) {
           <div className="flex flex-col">
             {items.map((item, i) => {
               const c = colors[item.type] ?? colors.logistics
-              const isLogistics = item.type === 'logistics'
               return (
-                <div key={i} className={`flex gap-0 sm:gap-4 relative ${isLogistics ? 'opacity-35' : ''}`}>
+                <div key={i} className="flex gap-0 sm:gap-4 relative">
 
                   {/* Time */}
                   <div className="hidden sm:flex w-24 flex-shrink-0 flex-col items-end pt-[1.35rem] pr-4">
                     <p className="text-[#1a1a1a] text-sm font-bold tabular-nums leading-none">{item.time}</p>
-                    {item.endTime && <p className="text-[#ccc] text-[11px] mt-1 tabular-nums">{item.endTime}</p>}
+                    {item.endTime && <p className="text-[#888] text-[11px] mt-1 tabular-nums">{item.endTime}</p>}
                   </div>
 
                   {/* Square dot — pixel aesthetic (no rounded-full) */}
@@ -46,9 +45,9 @@ export default function Schedule({ conf }) {
 
                   {/* Content */}
                   <div className={`flex-1 py-5 pl-4 sm:pl-5 ${i < items.length - 1 ? 'border-b border-[#f2f2f2] sm:border-0' : ''}`}>
-                    <p className="sm:hidden text-[#bbb] text-[11px] font-bold tabular-nums mb-1">{item.time}</p>
+                    <p className="sm:hidden text-[#666] text-[11px] font-bold tabular-nums mb-1">{item.time}</p>
                     <div className="flex flex-wrap items-start gap-x-3 gap-y-1">
-                      <p className={`font-bold text-base leading-snug ${item.type === 'social' ? 'text-[#1fffb6]' : 'text-ink'}`}>
+                      <p className="font-bold text-base leading-snug text-ink">
                         {item.event}
                       </p>
                       {c.badge && label[item.type] && (
@@ -57,8 +56,8 @@ export default function Schedule({ conf }) {
                         </span>
                       )}
                     </div>
-                    {item.detail && <p className="text-[#777] text-sm mt-1 italic">{item.detail}</p>}
-                    {item.location && <p className="text-[#ccc] text-xs mt-1.5 tracking-wide">{item.location}</p>}
+                    {item.detail && <p className="text-[#555] text-sm mt-1 italic">{item.detail}</p>}
+                    {item.location && <p className="text-[#777] text-xs mt-1.5 tracking-wide">{item.location}</p>}
                   </div>
                 </div>
               )
