@@ -1,8 +1,10 @@
 import { useState } from 'react'
+import ReactMarkdown from 'react-markdown'
 import ComingSoon from './ComingSoon'
 
 function PresentationItem({ p, index }) {
   const [open, setOpen] = useState(false)
+  const { data: d, content } = p
   return (
     <li className="py-5 border-t border-g800">
       <div className="flex gap-5 items-baseline">
@@ -10,12 +12,12 @@ function PresentationItem({ p, index }) {
           {String(index + 1).padStart(2, '0')}
         </span>
         <div className="flex-1 min-w-0">
-          <p className="text-white font-bold text-base leading-snug">"{p.title}"</p>
+          <p className="text-white font-bold text-base leading-snug">{d.title}</p>
           <p className="text-mint text-sm mt-1">
-            {p.presenter}
-            {p.affiliation && <span className="text-g500"> · {p.affiliation}</span>}
+            {d.presenter}
+            {d.affiliation && <span className="text-g500"> · {d.affiliation}</span>}
           </p>
-          {p.abstract && (
+          {content?.trim() && (
             <>
               <button
                 onClick={() => setOpen(o => !o)}
@@ -25,9 +27,9 @@ function PresentationItem({ p, index }) {
                 <span className={`inline-block w-1.5 h-1.5 border-r-2 border-b-2 border-current transition-transform duration-200 ${open ? '-rotate-135' : 'rotate-45'}`} />
               </button>
               {open && (
-                <p className="text-g300 text-sm leading-relaxed mt-2 max-w-2xl border-l-2 border-[#60a5fa]/30 pl-4">
-                  {p.abstract}
-                </p>
+                <div className="text-g300 text-sm leading-relaxed mt-2 max-w-2xl border-l-2 border-[#60a5fa]/30 pl-4 prose-sm prose-invert">
+                  <ReactMarkdown>{content}</ReactMarkdown>
+                </div>
               )}
             </>
           )}
@@ -38,7 +40,7 @@ function PresentationItem({ p, index }) {
 }
 
 function SessionBlock({ session }) {
-  const { data: d } = session
+  const { data: d, content } = session
   return (
     <article className="border border-g800 border-l-4 border-l-[#60a5fa] overflow-hidden">
       {/* Header */}
@@ -58,12 +60,19 @@ function SessionBlock({ session }) {
         </div>
       </div>
 
+      {/* Description */}
+      {content?.trim() && (
+        <div className="px-7 pt-4 pb-2 text-g300 text-sm leading-relaxed prose-sm prose-invert">
+          <ReactMarkdown>{content}</ReactMarkdown>
+        </div>
+      )}
+
       {/* Presentations */}
       {d.presentations?.length > 0 && (
         <div className="px-7 pb-4">
           <ol>
             {d.presentations.map((p, i) => (
-              <PresentationItem key={i} p={p} index={i} />
+              <PresentationItem key={p.data.id} p={p} index={i} />
             ))}
           </ol>
         </div>
