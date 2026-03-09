@@ -21,6 +21,7 @@ groups:
       - name: "Elizabeth Gilkey"
         role: "Programme Co-Chair"
         linkedin: "https://www.linkedin.com/in/elizabeth-gilkey-5b4b73343/"
+        photo: "/team/liz.png"
 
   - name: "Advisors"
     members:
