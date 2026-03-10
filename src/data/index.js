@@ -3,6 +3,7 @@ import { parseMd } from '../utils/parseMd'
 // Static imports — add new .md files here as content grows
 import conferenceRaw from '../../content/conference.md?raw'
 import committeeRaw from '../../content/committee.md?raw'
+import galleryRaw from '../../content/gallery.md?raw'
 
 const speakerRaws       = import.meta.glob('../../content/speakers/*.md',      { query: '?raw', import: 'default', eager: true })
 const panelRaws         = import.meta.glob('../../content/panels/*.md',        { query: '?raw', import: 'default', eager: true })
@@ -40,6 +41,7 @@ function parseSessions(raws) {
 
 export const conference = parseMd(conferenceRaw)
 export const committee  = parseMd(committeeRaw)
+export const gallery    = parseMd(galleryRaw)
 export const speakers   = parseAll(speakerRaws)
 export const panels     = parseAll(panelRaws)
 export const sessions   = parseSessions(sessionRaws)

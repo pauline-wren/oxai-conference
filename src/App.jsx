@@ -8,7 +8,7 @@ import Sessions from './components/Sessions'
 import Workshops from './components/Workshops'
 import Committee from './components/Committee'
 import Footer from './components/Footer'
-import { conference, committee, speakers, panels, sessions, workshops } from './data'
+import { conference, committee, gallery, speakers, panels, sessions, workshops } from './data'
 
 export default function App() {
   const { data: conf, content: confBody } = conference
@@ -19,7 +19,7 @@ export default function App() {
       <Nav conf={conf} />
       <main>
         <Hero conf={conf} />
-        <About conf={conf} body={confBody} />
+        <About conf={conf} body={confBody} photos={gallery.data.photos ?? []} />
         <Schedule conf={conf} />
         <Speakers speakers={speakers} />
         <Panels panels={panels} />
