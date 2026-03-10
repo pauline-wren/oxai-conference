@@ -9,6 +9,8 @@ photos:
     alt: "Social"
   - src: "/gallery/panel.jpeg"
     alt: "Panel Beyond Automation"
+  - src: "/gallery/josh2.jpeg"
+    alt: "Josh Lawman"
   - src: "/gallery/panel2.jpeg"
     alt: "The New Era of AI Chatbots"
   - src: "/gallery/talk1.jpg"
