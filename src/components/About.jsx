@@ -4,6 +4,8 @@ import { useState, useEffect } from 'react'
 
 function Carousel({ photos }) {
   const [idx, setIdx] = useState(0)
+  const [touchX, setTouchX] = useState(null)
+
   const prev = () => setIdx(i => (i - 1 + photos.length) % photos.length)
   const next = () => setIdx(i => (i + 1) % photos.length)
 
@@ -15,6 +17,14 @@ function Carousel({ photos }) {
     window.addEventListener('keydown', handler)
     return () => window.removeEventListener('keydown', handler)
   }, [])
+
+  const onTouchStart = e => setTouchX(e.touches[0].clientX)
+  const onTouchEnd = e => {
+    if (touchX === null) return
+    const dx = e.changedTouches[0].clientX - touchX
+    if (Math.abs(dx) > 40) dx < 0 ? next() : prev()
+    setTouchX(null)
+  }
 
   const photo = photos[idx]
 
@@ -30,7 +40,12 @@ function Carousel({ photos }) {
       </div>
 
       {/* Main image */}
-      <div className="relative overflow-hidden" style={{ aspectRatio: '4/3' }}>
+      <div
+        className="relative overflow-hidden"
+        style={{ aspectRatio: '4/3' }}
+        onTouchStart={onTouchStart}
+        onTouchEnd={onTouchEnd}
+      >
         <img
           key={idx}
           src={photo.src}
@@ -38,11 +53,11 @@ function Carousel({ photos }) {
           className="carousel-img w-full h-full object-cover"
         />
 
-        {/* Prev button */}
+        {/* Prev button — always visible on mobile, hover-only on desktop */}
         <button
           onClick={prev}
           aria-label="Previous"
-          className="absolute left-0 top-0 h-full w-16 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-200"
+          className="absolute left-0 top-0 h-full w-14 flex items-center justify-center opacity-100 md:opacity-0 md:hover:opacity-100 transition-opacity duration-200"
         >
           <svg width="28" height="28" viewBox="0 0 28 28" fill="none" className="drop-shadow-[0_0_6px_rgba(31,255,182,0.6)]">
             <polyline points="18,4 8,14 18,24" stroke="#1fffb6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -53,7 +68,7 @@ function Carousel({ photos }) {
         <button
           onClick={next}
           aria-label="Next"
-          className="absolute right-0 top-0 h-full w-16 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-200"
+          className="absolute right-0 top-0 h-full w-14 flex items-center justify-center opacity-100 md:opacity-0 md:hover:opacity-100 transition-opacity duration-200"
         >
           <svg width="28" height="28" viewBox="0 0 28 28" fill="none" className="drop-shadow-[0_0_6px_rgba(31,255,182,0.6)]">
             <polyline points="10,4 20,14 10,24" stroke="#1fffb6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -69,17 +84,16 @@ function Carousel({ photos }) {
       </div>
 
       {/* Thumbnail strip */}
-      <div className="flex gap-1 p-2 bg-g900 border-t border-g800 overflow-x-auto">
+      <div className="flex gap-1.5 p-2.5 bg-g900 border-t border-g800 overflow-x-auto">
         {photos.map((p, i) => (
           <button
             key={i}
             onClick={() => setIdx(i)}
-            className="flex-shrink-0 relative overflow-hidden transition-all"
-            style={{ width: 52, height: 36 }}
+            className="flex-shrink-0 relative overflow-hidden"
+            style={{ width: 60, height: 44 }}
             aria-label={`Photo ${i + 1}`}
           >
             <img src={p.src} alt={p.alt} className="w-full h-full object-cover" />
-            {/* Active indicator */}
             {i === idx
               ? <div className="absolute inset-0 ring-1 ring-mint ring-inset" />
               : <div className="absolute inset-0 bg-ink/50 hover:bg-ink/20 transition-colors" />
