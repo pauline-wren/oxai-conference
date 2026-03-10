@@ -122,7 +122,7 @@ export default function About({ conf, body, photos }) {
 
           {/* Carousel — 60% */}
           {photos?.length > 0 && (
-            <div className="md:w-3/5">
+            <div className="w-full md:w-3/5">
               <Carousel photos={photos} />
             </div>
           )}
