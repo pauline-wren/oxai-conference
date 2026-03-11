@@ -12,6 +12,11 @@ groups:
         role: "Programme Co-Chair"
         linkedin: "https://www.linkedin.com/in/evelyn-schneider"
 
+      - name: "Narankar Sehmi"
+        role: "Programme Co-Chair"
+        linkedin: "https://www.linkedin.com/in/narankar/"
+        photo: "/team/narankar.png"
+
       - name: "Frederik Nolte"
         role: "Programme Co-Chair"
         photo: "/team/frederik.png"
@@ -23,7 +28,7 @@ groups:
         linkedin: "https://www.linkedin.com/in/elizabeth-gilkey-5b4b73343/"
         photo: "/team/liz.png"
 
-  - name: "Advisors"
+  - name: "Advisory Board"
     members:
       - name: "Ivan Vasenov"
         role: "Advisor"
@@ -44,7 +49,7 @@ groups:
 
 
   - name: "Oxford AI Society"
-    note: "Proudly presented by the Oxford AI Society. Many more members of our community contributed to making this conference happen — thank you to everyone who gave their time, ideas, and effort."
+    note: "Proudly presented by the Oxford AI Society. Many more members not listed here of our community contributed to making this conference happen — thank you to everyone who gave their time, ideas, and effort."
     members: []
 
 thanks:
