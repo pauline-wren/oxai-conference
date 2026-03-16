@@ -29,77 +29,60 @@ function Carousel({ photos }) {
   const photo = photos[idx]
 
   return (
-    <div className="bg-ink flex flex-col">
+    <div
+      className="relative overflow-hidden"
+      style={{ aspectRatio: '16/9' }}
+      onTouchStart={onTouchStart}
+      onTouchEnd={onTouchEnd}
+    >
+      <img
+        key={idx}
+        src={photo.src}
+        alt={photo.alt}
+        className="carousel-img w-full h-full object-cover"
+      />
 
-      {/* Top bar */}
-      <div className="flex items-center justify-between px-4 py-2.5 border-b border-g800">
-        <span className="text-mint text-[9px] tracking-[0.3em] uppercase font-bold">Recap</span>
-        <span className="text-g500 text-[9px] tracking-widest font-bold">
-          {String(idx + 1).padStart(2, '0')}&nbsp;/&nbsp;{String(photos.length).padStart(2, '0')}
-        </span>
-      </div>
+      {/* Gradient overlays for controls */}
+      <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-ink/60 to-transparent pointer-events-none" />
+      <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-ink/60 to-transparent pointer-events-none" />
 
-      {/* Main image */}
-      <div
-        className="relative overflow-hidden"
-        style={{ aspectRatio: '4/3' }}
-        onTouchStart={onTouchStart}
-        onTouchEnd={onTouchEnd}
+      {/* Prev */}
+      <button
+        onClick={prev}
+        aria-label="Previous"
+        className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center border border-white/20 bg-ink/40 hover:bg-ink/70 hover:border-mint transition-colors"
       >
-        <img
-          key={idx}
-          src={photo.src}
-          alt={photo.alt}
-          className="carousel-img w-full h-full object-cover"
-        />
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+          <polyline points="10,2 4,8 10,14" stroke="#1fffb6" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+      </button>
 
-        {/* Prev button — always visible on mobile, hover-only on desktop */}
-        <button
-          onClick={prev}
-          aria-label="Previous"
-          className="absolute left-0 top-0 h-full w-14 flex items-center justify-center opacity-100 md:opacity-0 md:hover:opacity-100 transition-opacity duration-200"
-        >
-          <svg width="28" height="28" viewBox="0 0 28 28" fill="none" className="drop-shadow-[0_0_6px_rgba(31,255,182,0.6)]">
-            <polyline points="18,4 8,14 18,24" stroke="#1fffb6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
-        </button>
+      {/* Next */}
+      <button
+        onClick={next}
+        aria-label="Next"
+        className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center border border-white/20 bg-ink/40 hover:bg-ink/70 hover:border-mint transition-colors"
+      >
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+          <polyline points="6,2 12,8 6,14" stroke="#1fffb6" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+      </button>
 
-        {/* Next button */}
-        <button
-          onClick={next}
-          aria-label="Next"
-          className="absolute right-0 top-0 h-full w-14 flex items-center justify-center opacity-100 md:opacity-0 md:hover:opacity-100 transition-opacity duration-200"
-        >
-          <svg width="28" height="28" viewBox="0 0 28 28" fill="none" className="drop-shadow-[0_0_6px_rgba(31,255,182,0.6)]">
-            <polyline points="10,4 20,14 10,24" stroke="#1fffb6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
-        </button>
-
-        {/* Caption */}
+      {/* Caption + dots */}
+      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-ink/90 via-ink/40 to-transparent pt-16 pb-5 px-6 flex items-end justify-between">
         {photo.alt && (
-          <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-ink/90 to-transparent pt-8 pb-3 px-4">
-            <p className="text-white text-[10px] tracking-[0.2em] uppercase font-bold">{photo.alt}</p>
-          </div>
+          <p className="text-white/80 text-[10px] tracking-[0.2em] uppercase font-bold">{photo.alt}</p>
         )}
-      </div>
-
-      {/* Thumbnail strip */}
-      <div className="flex gap-1.5 p-2.5 bg-g900 border-t border-g800 overflow-x-auto">
-        {photos.map((p, i) => (
-          <button
-            key={i}
-            onClick={() => setIdx(i)}
-            className="flex-shrink-0 relative overflow-hidden"
-            style={{ width: 60, height: 44 }}
-            aria-label={`Photo ${i + 1}`}
-          >
-            <img src={p.src} alt={p.alt} className="w-full h-full object-cover" />
-            {i === idx
-              ? <div className="absolute inset-0 ring-1 ring-mint ring-inset" />
-              : <div className="absolute inset-0 bg-ink/50 hover:bg-ink/20 transition-colors" />
-            }
-          </button>
-        ))}
+        <div className="flex items-center gap-1.5 ml-auto">
+          {photos.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => setIdx(i)}
+              aria-label={`Photo ${i + 1}`}
+              className={`transition-all duration-200 ${i === idx ? 'w-5 h-1.5 bg-mint' : 'w-1.5 h-1.5 bg-white/30 hover:bg-white/60'}`}
+            />
+          ))}
+        </div>
       </div>
     </div>
   )
@@ -107,26 +90,25 @@ function Carousel({ photos }) {
 
 export default function About({ conf, body, photos }) {
   return (
-    <section id="about" className="bg-white py-20 md:py-24 border-b border-[#e5e5e5]">
-      <div className="max-w-5xl mx-auto px-5 md:px-8">
-        <div className="mb-12">
-          <span className="inline-block bg-mint text-ink text-[11px] font-bold tracking-widest uppercase px-2.5 py-1 mb-4">About</span>
-          <h2 className="text-ink font-bold text-3xl md:text-5xl tracking-tight">{conf.title}</h2>
-        </div>
+    <section id="about" className="bg-ink py-20 md:py-28 border-b border-g800">
+      <div className="max-w-7xl mx-auto px-5 md:px-8">
 
-        <div className="flex flex-col md:flex-row gap-10 md:gap-14 items-start">
-          {/* Text — 40% */}
-          <div className="md:w-2/5 text-[#333] text-base leading-loose space-y-4">
-            <ReactMarkdown rehypePlugins={[rehypeRaw]}>{body}</ReactMarkdown>
-          </div>
-
-          {/* Carousel — 60% */}
-          {photos?.length > 0 && (
-            <div className="w-full md:w-3/5">
-              <Carousel photos={photos} />
+        {/* Header */}
+        <div className="mb-10 md:mb-14">
+          <span className="inline-block bg-g800 text-mint text-[11px] font-bold tracking-widest uppercase px-2.5 py-1 mb-6">About</span>
+          <h2 className="text-white font-bold text-4xl md:text-6xl xl:text-7xl tracking-tight leading-[1.05]">
+            {conf.title}
+          </h2>
+          {body && (
+            <div className="mt-8 border-l-2 border-mint pl-6 max-w-2xl text-g300 text-lg leading-relaxed space-y-3 [&_strong]:text-white [&_a]:text-mint [&_a]:underline">
+              <ReactMarkdown rehypePlugins={[rehypeRaw]}>{body}</ReactMarkdown>
             </div>
           )}
         </div>
+
+        {/* Cinematic full-width carousel */}
+        {photos?.length > 0 && <Carousel photos={photos} />}
+
       </div>
     </section>
   )

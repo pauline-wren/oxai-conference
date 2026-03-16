@@ -20,7 +20,9 @@ export default function Nav({ conf }) {
   }, [])
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 h-14 flex items-center justify-between px-5 md:px-8 transition-colors duration-200 border-b ${scrolled ? 'bg-ink border-g800' : 'border-transparent'}`}>
+    <header className={`fixed top-0 left-0 right-0 z-50 h-14 transition-colors duration-200 border-b ${scrolled ? 'bg-ink border-g800' : 'border-transparent'}`}>
+
+      <div className="max-w-7xl mx-auto w-full h-full px-5 md:px-8 flex items-center justify-between">
 
       <a href="#top" className="flex items-center">
         <img src="/oxai_logo_text.png" alt="OxAI" className="h-9 w-auto brightness-110" />
@@ -64,6 +66,8 @@ export default function Nav({ conf }) {
           </a>
         </div>
       )}
+
+      </div>
     </header>
   )
 }

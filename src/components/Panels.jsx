@@ -206,7 +206,7 @@ function PanelBlock({ panel }) {
 export default function Panels({ panels }) {
   return (
     <section id="panels" className="bg-[#f4f4f4] py-20 md:py-24 border-b border-[#e5e5e5]">
-      <div className="max-w-5xl mx-auto px-5 md:px-8">
+      <div className="max-w-7xl mx-auto px-5 md:px-8">
         <div className="mb-12">
           <span className="inline-block bg-mint text-ink text-[11px] font-bold tracking-widest uppercase px-2.5 py-1 mb-4">Discussion</span>
           <h2 className="text-ink font-bold text-3xl md:text-5xl tracking-tight">Panels</h2>

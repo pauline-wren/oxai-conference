@@ -15,7 +15,7 @@ export default function Hero({ conf }) {
       <div className="absolute right-[9%] top-[30%] w-[200px] h-[200px] border border-mint/[0.08] rotate-45 pointer-events-none" />
       <div className="absolute left-[-3%] bottom-[8%] w-[280px] h-[280px] border border-mint/[0.04] -rotate-8 pointer-events-none" />
 
-      <div className="relative max-w-5xl mx-auto w-full flex flex-col gap-8">
+      <div className="relative max-w-7xl mx-auto w-full flex flex-col gap-8">
 
         <img src="/oxai_logo_text.png" alt="OxAI" className="w-full max-w-xs sm:max-w-sm md:max-w-lg h-auto" />
 

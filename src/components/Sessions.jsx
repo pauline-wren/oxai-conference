@@ -84,7 +84,7 @@ function SessionBlock({ session }) {
 export default function Sessions({ sessions }) {
   return (
     <section id="sessions" className="bg-ink py-20 md:py-24 border-b border-g800">
-      <div className="max-w-5xl mx-auto px-5 md:px-8">
+      <div className="max-w-7xl mx-auto px-5 md:px-8">
         <div className="mb-12">
           <span className="inline-block bg-mint text-ink text-[11px] font-bold tracking-widest uppercase px-2.5 py-1 mb-4">Research</span>
           <h2 className="text-white font-bold text-3xl md:text-5xl tracking-tight">Presentations</h2>

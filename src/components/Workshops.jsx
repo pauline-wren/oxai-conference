@@ -62,12 +62,12 @@ export default function Workshops({ workshops }) {
   if (!workshops.length) return null
   return (
     <section id="workshops" className="bg-[#f4f4f4] py-20 md:py-24 border-b border-[#e5e5e5]">
-      <div className="max-w-5xl mx-auto px-5 md:px-8">
+      <div className="max-w-7xl mx-auto px-5 md:px-8">
         <div className="mb-12">
           <span className="inline-block bg-mint text-ink text-[11px] font-bold tracking-widest uppercase px-2.5 py-1 mb-4">Hands-On</span>
           <h2 className="text-ink font-bold text-3xl md:text-5xl tracking-tight">Workshops</h2>
         </div>
-        <div className="flex flex-col gap-5">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
           {workshops.map(w => <WorkshopCard key={w.data.id} workshop={w} />)}
         </div>
       </div>

@@ -32,7 +32,7 @@ function MemberCard({ member: m }) {
 export default function Committee({ groups, thanks, thanksPeople }) {
   return (
     <section id="committee" className="bg-ink py-20 md:py-24 border-b border-g800">
-      <div className="max-w-5xl mx-auto px-5 md:px-8">
+      <div className="max-w-7xl mx-auto px-5 md:px-8">
         <div className="mb-12">
           <span className="inline-block bg-g800 text-mint text-[11px] font-bold tracking-widest uppercase px-2.5 py-1 mb-4">People</span>
           <h2 className="text-white font-bold text-3xl md:text-5xl tracking-tight">Team</h2>
@@ -46,7 +46,7 @@ export default function Committee({ groups, thanks, thanksPeople }) {
                   <div className="flex-1 h-px bg-g800" />
                 </div>
                 {group.members?.length > 0 ? (
-                  <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+                  <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-4">
                     {group.members.map((m, i) => <MemberCard key={i} member={m} />)}
                   </div>
                 ) : group.note ? (
